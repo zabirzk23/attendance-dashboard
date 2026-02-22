@@ -35,6 +35,7 @@ function addSubject() {
     if (!name || isNaN(total) || isNaN(attended) || attended > total) return;
 
     subjects.push({ name, total, attended });
+    showToast("Subject added");
     saveData();
     displaySubjects();
     updateDashboard();
@@ -76,6 +77,8 @@ function displaySubjects() {
 
         list.innerHTML += `
             <div class="subject-card">
+            let needed = Math.ceil((0.8 * sub.total - sub.attended) / 0.2);
+if (needed < 0) needed = 0;
                 <h3>${sub.name}</h3>
                 <p>Present: ${sub.attended}</p>
                 <p>Total: ${sub.total}</p>
@@ -179,5 +182,14 @@ function clearAll() {
     displaySubjects();
     updateDashboard();
 }
+function toggleTheme() {
+    document.body.classList.toggle("dark");
+}
 
+function showToast(msg) {
+    const toast = document.getElementById("toast");
+    toast.textContent = msg;
+    toast.classList.add("show");
+    setTimeout(() => toast.classList.remove("show"), 2000);
+}
 showDashboard();
