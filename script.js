@@ -15,7 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark");
   }
-
+  const savedThreshold = localStorage.getItem("threshold");
+if (savedThreshold) {
+  document.getElementById("thresholdInput").value = savedThreshold;
+}
 });
 
 let subjects = JSON.parse(localStorage.getItem("subjects")) || [];

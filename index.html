@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1f2937">
     <title>Student Attendance</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -12,7 +14,9 @@
   <input type="email" id="email" placeholder="Email">
   <input type="password" id="password" placeholder="Password">
   <button onclick="login()">Login</button>
-  <button onclick="openSettings()">Close</button>
+  <button onclick="document.getElementById('login').style.display='none'">
+Close
+</button>
 </div>
 <div class="navbar">
     <h2>Attendance Dashboard</h2>
