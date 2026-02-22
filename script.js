@@ -128,8 +128,8 @@ function displaySubjects() {
     list.innerHTML += `
       <div class="subject-card">
         <h3>${sub.name}</h3>
-        <p>Present: ${sub.attended}</p>
-        <p>Total: ${sub.total}</p>
+        <p>Present: ${sub.attended} hours</p>
+        <p>Total: ${sub.total} hours</p>
         <p style="color:${statusColor}">
           Attendance: ${percent}%
         </p>
