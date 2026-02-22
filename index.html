@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Updated By Zabir</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="layout">
+
+    <div class="sidebar">
+        <h2>My Attenda</h2>
+        <ul>
+            <li onclick="showDashboard()">Dashboard</li>
+            <li onclick="showSubjects()">Subjects</li>
+            <li onclick="showAnalytics()">Analytics</li>
+        </ul>
+    </div>
+
+    <div class="main">
+
+        <div id="dashboard" class="section">
+            <h1>Overall Summary</h1>
+            <div id="overallStats"></div>
+        </div>
+
+        <div id="subjects" class="section hidden">
+            <h1>Subjects</h1>
+
+            <input type="text" id="subjectName" placeholder="Subject Name">
+            <input type="number" id="total" placeholder="Total Classes">
+            <input type="number" id="attended" placeholder="Classes Attended">
+            <button onclick="addSubject()">Add Subject</button>
+            <button onclick="clearAll()" style="background:#ef4444;">
+    Clear All Data
+</button>
+            <div id="subjectList"></div>
+        </div>
+
+        <div id="analytics" class="section hidden">
+            <h1>Attendance Analytics</h1>
+            <canvas id="attendanceChart"></canvas>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
