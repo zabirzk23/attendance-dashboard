@@ -195,4 +195,25 @@ function showToast(msg) {
     toast.classList.add("show");
     setTimeout(() => toast.classList.remove("show"), 2000);
 }
+function openSettings() {
+  document.getElementById("settingsModal").classList.toggle("hidden");
+}
+
+function saveSettings() {
+  const threshold = document.getElementById("thresholdInput").value;
+  localStorage.setItem("threshold", threshold);
+  alert("Settings saved!");
+}
+function downloadPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  doc.text("Attendance Report", 20, 20);
+  doc.save("report.pdf");
+}
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+function login() {
+  alert("Login system coming — connect Firebase next");
+}
 showDashboard();
