@@ -123,3 +123,10 @@ body.dark {
 .hidden {
   display: none;
 }
+body.dark .subject-card {
+  background: #1f2937;
+}
+
+body.dark .sidebar {
+  background: #000;
+}
