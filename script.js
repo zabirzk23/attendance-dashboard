@@ -140,8 +140,8 @@ function displaySubjects() {
           </div>
         </div>
 
-        <p>Safe Bunks Remaining: ${bunkLimit}</p>
-        <p>Classes needed: ${needed}</p>
+        <p>Safe Bunks Remaining: ${bunkLimit} hours</p>
+        <p>Classes needed: ${needed} hours</p>
 
         <button onclick="editSubject(${index})">Edit</button>
         <button onclick="confirmDelete(${index})" style="background:#ef4444;">
