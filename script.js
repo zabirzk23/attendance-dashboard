@@ -252,7 +252,9 @@ function openSettings() {
 function saveSettings() {
   const threshold = document.getElementById("thresholdInput").value;
   localStorage.setItem("threshold", threshold);
-  showToast("Settings saved");
+  updateDashboard();
+  displaySubjects();
+  alert("Settings saved!");
 }
 
 function downloadPDF() {
