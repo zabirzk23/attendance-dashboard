@@ -75,10 +75,12 @@ function displaySubjects() {
         let bunkLimit = Math.floor((sub.attended - 0.8 * sub.total) / 0.8);
         if (bunkLimit < 0) bunkLimit = 0;
 
+        // Prediction logic
+        let needed = Math.ceil((0.8 * sub.total - sub.attended) / 0.2);
+        if (needed < 0) needed = 0;
+
         list.innerHTML += `
             <div class="subject-card">
-            let needed = Math.ceil((0.8 * sub.total - sub.attended) / 0.2);
-if (needed < 0) needed = 0;
                 <h3>${sub.name}</h3>
                 <p>Present: ${sub.attended}</p>
                 <p>Total: ${sub.total}</p>
@@ -93,9 +95,10 @@ if (needed < 0) needed = 0;
                 </div>
 
                 <p>Safe Bunks Remaining: ${bunkLimit}</p>
+                <p>Classes needed for 80%: ${needed}</p>
 
                 <button onclick="editSubject(${index})">Edit</button>
-                <button onclick="deleteSubject(${index})" 
+                <button onclick="deleteSubject(${index})"
                         style="background:#ef4444;">
                         Delete
                 </button>
